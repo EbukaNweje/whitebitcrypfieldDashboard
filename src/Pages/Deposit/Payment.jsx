@@ -20,14 +20,13 @@ const Payment = () => {
     const nav = useNavigate()
     console.log(amount);
 
-    const depositDatas = [
+    const depositDatas = 
         {
             amount: amount,
             paymentMode: paymentname,
             status: "success",
-            dateCreated: new Date()
+            dateCreated: new Date().toDateString(),
         }
-    ]
     const dispatch = useDispatch()
     // console.log(depositData)
 

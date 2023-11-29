@@ -17,12 +17,11 @@ const swift = createSlice({
         state.user = payload;
         console.log("Redux User data", payload);
         },
+
         updateDepositData(state, action) {
+          state.depositData.push(action.payload) 
           console.log("FIRST", action.payload);
-          return {
-            ...state,
-            depositData: [...state.depositData, action.payload],
-          };
+        //  = [...state.depositData, action.payload]
         },
   },
 });

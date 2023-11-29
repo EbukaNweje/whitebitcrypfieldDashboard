@@ -3,8 +3,11 @@ import {FaDownload, FaArrowAltCircleUp} from "react-icons/fa";
 import {LuArrowRightFromLine} from "react-icons/lu";
 import {FaArrowUpLong, FaArrowDownLong} from "react-icons/fa6";
 import {useState} from "react";
+import { useSelector } from "react-redux";
 
 const Transactions = () => {
+    const userData = useSelector((state) => state.persisitedReducer.depositData)
+    console.log(userData);
     const [transDeposit, setTransDeposit] = useState(true);
     const [transWithdrawal, setTransWithdrawal] = useState(false);
     const [transOthers, setTransOthers] = useState(false);
@@ -112,20 +115,25 @@ const Transactions = () => {
                                     </div>
                                 </div>
                                 <div className="TransactionContentResultC">
-                                    <div className="TransactionContentResultCItem">
+                                    {
+                                        userData.map((data)=>(
+                                        <div className="TransactionContentResultCItem">
                                         <div className="TransactionContentResultC1">
-                                            $2000
+                                            {data.amount}
                                         </div>
                                         <div className="TransactionContentResultC2">
-                                            BITCOIN PAYMENT
+                                            {data.paymentMode}
                                         </div>
                                         <div className="TransactionContentResultC3">
-                                            <span>Pending</span>
+                                            <span>{data.status}</span>
                                         </div>
                                         <div className="TransactionContentResultC4">
-                                            Thu, Nov 23, 2023 4:03 AM
+                                        {data.dateCreated}
                                         </div>
                                     </div>
+                                        ))
+                                    }
+                                    
                                 </div>
                                 <div className="TransactionContentResultD">
                                     <div className="TransactionContentResultDLeft">
@@ -205,19 +213,19 @@ const Transactions = () => {
                                 <div className="TransactionContentResultC">
                                     <div className="TransactionContentResultCItem">
                                         <div className="TransactionContentResultC1W">
-                                            $2000
+                                            {/* $2000 */}
                                         </div>
                                         <div className="TransactionContentResultC2W">
-                                            $2,100
+                                            {/* $2,100 */}
                                         </div>
                                         <div className="TransactionContentResultC2W">
-                                            Bank
+                                            {/* Bank */}
                                         </div>
                                         <div className="TransactionContentResultC3W">
-                                            <span>Pending</span>
+                                            {/* <span>Pending</span> */}
                                         </div>
                                         <div className="TransactionContentResultC4W">
-                                            Thu, Nov 24, 2023 4:03 AM
+                                            {/* Thu, Nov 24, 2023 4:03 AM */}
                                         </div>
                                     </div>
                                 </div>

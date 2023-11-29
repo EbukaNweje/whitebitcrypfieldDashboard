@@ -11,6 +11,7 @@ const persistConfig = {
 };
 
 const persisitedReducer = persistReducer(persistConfig, swift);
+
 export const store = configureStore({
   reducer: { persisitedReducer },
   middleware: (getDefaultMiddleware) =>
