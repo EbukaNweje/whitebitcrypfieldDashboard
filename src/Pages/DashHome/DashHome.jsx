@@ -139,14 +139,23 @@ const DashHome = () => {
                     </div>
                     <div className="DashHomeMainContentActiveDiv">
                         <h3>
-                            Active Plans(s) <span>(0)</span>
+                            Active Plans(s) <span>({userData?.accountBalance <= 0 ? "0" : "1" })</span>
                         </h3>
                         <div className="DashHomeMainContentActiveDivBox">
                             <p>
-                                You do not have an active investment plan at the
-                                moment.
+                                {
+                                userData?.accountBalance  <= 0 ? <>
+                                   You do not have an active investment plan at the
+                                    moment.
+                                    <button onClick={()=> {myPlans(true), myHome(false)}}>Buy Plan</button>
+                                </>: <>
+                                {userData?.newDay <= 0 ? "Your trading session has expired" : "Your trading session ends in"} <span style={{fontWeight: "bold"}}>{userData?.newDay <= 0 ? "0" : userData?.newDay}  {userData?.newDay <= 0 ? 'day' : 'days'}.</span>
+                                    {userData?.newDay <= 0 ? <button onClick={()=> {myPlans(true), myHome(false)}}>Buy Plan</button>:null}
+                                </> 
+                                
+                            }
                             </p>
-                            <button>Buy a plan</button>
+                            {/* <button>Buy a plan</button> */}
                         </div>
                     </div>
                     <div className="DashHomeMainContenRecentTransactionDiv">
