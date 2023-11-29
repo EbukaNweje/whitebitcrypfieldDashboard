@@ -6,7 +6,7 @@ import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Payment = () => {
-    const {paymentname, id} = useParams()
+    const {paymentname,  } = useParams()
     const [pay, setpay] = useState(false)
     let amount = JSON.parse(localStorage.getItem("amount"))
     console.log(amount);

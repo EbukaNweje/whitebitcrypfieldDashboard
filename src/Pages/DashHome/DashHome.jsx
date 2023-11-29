@@ -47,7 +47,7 @@ const DashHome = () => {
         <>
             <div className="DashHomeBody">
                 <h2 className="DashHomeHeaderText">
-                    Welcome, <span>{userData.fullName}</span>
+                    Welcome, <span>{userData?.userName}</span>
                     
                 </h2>
                 <div className="DashHomeInfoBox1">
@@ -64,7 +64,7 @@ const DashHome = () => {
                                 <div className="DashHomeMainContentAccSummaryRow1Box">
                                     <div className="DashHomeMainContentAccSummaryRow1BoxL">
                                         <h4>Account Balance</h4>
-                                        <h3>$ &nbsp;{userData.accountBalance}.00</h3>
+                                        <h3>$ &nbsp;{userData?.accountBalance}.00</h3>
                                         <span style={{fontWeight:"700"}}>{roundedNumber}BTC</span>
                                         <p className="lineChart"></p>
                                     </div>
@@ -75,7 +75,7 @@ const DashHome = () => {
                                 <div className="DashHomeMainContentAccSummaryRow1Box">
                                     <div className="DashHomeMainContentAccSummaryRow1BoxL">
                                         <h4>Total Profit</h4>
-                                        <h3>$ &nbsp;{userData.totalProfit}.00</h3>
+                                        <h3>$ &nbsp;{userData?.totalProfit}.00</h3>
                                         <span style={{fontWeight:"700"}}>{roundedNumber2}BTC</span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
@@ -85,7 +85,7 @@ const DashHome = () => {
                                 <div className="DashHomeMainContentAccSummaryRow1Box">
                                     <div className="DashHomeMainContentAccSummaryRow1BoxL">
                                         <h4>Bonus</h4>
-                                        <h3>$ &nbsp;{userData.bonus}.00</h3>
+                                        <h3>$ &nbsp;{userData?.bonus}.00</h3>
                                         <span style={{fontWeight:"700"}}>{roundedNumber3}BTC</span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
@@ -96,7 +96,7 @@ const DashHome = () => {
                                 <div className="DashHomeMainContentAccSummaryRow2Box">
                                     <div className="DashHomeMainContentAccSummaryRow2BoxL">
                                         <h4>Referral Bonus</h4>
-                                        <h3>$ &nbsp;{userData.ref}.00</h3>
+                                        <h3>$ &nbsp;{userData?.ref}.00</h3>
                                         <span style={{fontWeight:"700"}}>{roundedNumber4}BTC</span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
@@ -106,7 +106,7 @@ const DashHome = () => {
                                 <div className="DashHomeMainContentAccSummaryRow2Box">
                                     <div className="DashHomeMainContentAccSummaryRow2BoxL">
                                         <h4>Total Deposits</h4>
-                                        <h3>$ &nbsp;{userData.totalDeposit}.00</h3>
+                                        <h3>$ &nbsp;{userData?.totalDeposit}.00</h3>
                                         <span style={{fontWeight:"700"}}>{roundedNumber5}BTC</span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
@@ -116,7 +116,7 @@ const DashHome = () => {
                                 <div className="DashHomeMainContentAccSummaryRow2Box">
                                     <div className="DashHomeMainContentAccSummaryRow2BoxL">
                                         <h4>Total Widthdrawal</h4>
-                                        <h3>$ &nbsp;{userData.totalWithdrawal}.00</h3>
+                                        <h3>$ &nbsp;{userData?.totalWithdrawal}.00</h3>
                                         <span style={{fontWeight:"700"}}>{roundedNumber6}BTC</span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
@@ -126,7 +126,7 @@ const DashHome = () => {
                                 <div className="DashHomeMainContentAccSummaryRow2Box">
                                     <div className="DashHomeMainContentAccSummaryRow2BoxL">
                                         <h4>Total Investment</h4>
-                                        <h3>$ &nbsp;{userData.totalInvestment}.00</h3>
+                                        <h3>$ &nbsp;{userData?.totalInvestment}.00</h3>
                                         <span style={{fontWeight:"700"}}>{roundedNumber7}BTC</span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">

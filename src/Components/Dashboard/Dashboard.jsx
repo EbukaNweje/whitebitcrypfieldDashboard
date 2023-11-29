@@ -48,7 +48,7 @@ const [userData, setUserdata] = useState({})
 
     const handleGetUser = async () => {
   
-    fetch(`https://the-bitpay-capital-back-end.vercel.app/api/userdata/${id}`, {
+    fetch(`https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`, {
       method: 'GET',
     })
     .then(response=> response.json())
@@ -272,7 +272,7 @@ const [userData, setUserdata] = useState({})
                                     <HiMiniUser className="HiMiniUser" />
                                 </div>
                                 <div className="DashboardNavAccountViewInitials">
-                                    <h2>{userData?.fullName}</h2>
+                                    <h2>{userData?.userName}</h2>
                                     <p>online</p>
                                 </div>
                                 <div className="DashboardNavAccountViewBalance">
@@ -424,14 +424,14 @@ const [userData, setUserdata] = useState({})
                                     <div>
                                         <HiMiniUser className="HiMiniUser" />
                                     </div>
-                                    <p>{userData.fullName}</p>
+                                    <p>{userData?.userName}</p>
                                 </div>
                             </div>
                             {showUserDrop ? (
                                 <>
                                     <div className="DashboardMainHeaderUserAccDiv">
                                         <div className="DashboardMainHeaderUserAccDivWrap">
-                                            <p>Hi Eflex Media</p>
+                                            <p>{userData?.userName}</p>
                                             <div className="DashboardMainHeaderUserAccDivPfp">
                                                 <span>
                                                     <FaRegUser />
