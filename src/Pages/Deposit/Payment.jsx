@@ -6,6 +6,8 @@ import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { updateDepositData } from "../../Components/store/FeaturesSlice";
 
 const Payment = () => {
     const {paymentname, id} = useParams()
@@ -13,10 +15,12 @@ const Payment = () => {
     let amount = JSON.parse(localStorage.getItem("amount"))
     const [isButtonDisabled, setButtonDisabled] = useState(false);
 
+
+
     const nav = useNavigate()
     console.log(amount);
 
-    const depositData = [
+    const depositDatas = [
         {
             amount: amount,
             paymentMode: paymentname,
@@ -24,8 +28,8 @@ const Payment = () => {
             dateCreated: new Date()
         }
     ]
-
-    console.log(depositData)
+    const dispatch = useDispatch()
+    // console.log(depositData)
 
     const [state, setState] = useState({
         value: `${paymentname === "BITCOINP PAYMENT"? ("bc1qcxum393n73ywftqnm77kjg7kc0qtav5s9fay5a"): paymentname === "ETHEREUM PAYMENT"? ("0x02Af0f6631ff12a34cf6bf905a7b234683A770cA"): paymentname ==="DOGECOIN PAYMENT"? ("DNRDKX9ZySoFfXXsbhVYrmGfZTRnMBNhLp"): paymentname==="BNB PAYMENT"?("bnb1urf2a2keqeukmpqn3eyacp53s7zhhpy62cq6ck"):"Chosse a Payment Method"}`,
@@ -36,10 +40,11 @@ const Payment = () => {
       
       const payNow = ()=> {
         setButtonDisabled(true)
-        axios.post(url, {amount})
+        axios.post(url, {Amount:amount})
         .then(res => {
           console.log(res)
           setpay(true)
+
         }).catch((err)=>{
           console.log(err)
         })
@@ -90,7 +95,11 @@ const Payment = () => {
                             </div>
                             <button onClick={payNow}
                             disabled={isButtonDisabled}
-                            >Submit Payment</button>
+                            >
+                                {
+                                    isButtonDisabled ?  "Submitting..." : 'Submit Payment'
+                                }
+                                </button>
                         </div>
                     </div>
                 </div>
@@ -99,7 +108,7 @@ const Payment = () => {
           <div className='SuccessPaid'>
                 <div className='PayCon'>
                     <h3>You have successfully made a deposit </h3>
-                    <button style={{width: "50%", height: "40px", background:"#0e4152", border:"none", color:"white", fontSize:"15px"}} onClick={()=>{setpay(false); nav(`/${id}`)}}>Ok</button>
+                    <button style={{width: "50%", height: "40px", background:"#0e4152", border:"none", color:"white", fontSize:"15px"}} onClick={()=>{setpay(false); nav(`/${id}`); dispatch(updateDepositData(depositDatas))}}>Ok</button>
                 </div>
             </div>: 
             null}

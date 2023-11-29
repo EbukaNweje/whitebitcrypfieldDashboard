@@ -12,7 +12,7 @@ import vid from '../../assets/crypt.mp4'
 
 const DashHome = ({homechange, planchange, Transactions}) => {
     const [exchangeRate, setExchangeRate] = useState(null);
-    const userData = useSelector((state) => state.swift.user)
+    const userData = useSelector((state) => state.persisitedReducer.user)
     console.log(userData);
 
     useEffect(() => {

@@ -11,7 +11,7 @@ const Profile = () => {
     const [showWithdrawalS, setShowWithdrawalS] = useState(false);
     const [showPasswordS, setShowPasswordS] = useState(false);
     const [showOtherS, setShowOtherS] = useState(false);
-    const userData = useSelector((state) => state.swift.user)
+    const userData = useSelector((state) => state.persisitedReducer.user)
 
     const handleShowPersonalS = () => {
         setShowPersonalS(true);

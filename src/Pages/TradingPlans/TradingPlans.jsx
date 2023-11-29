@@ -12,7 +12,7 @@ const TradingPlans = () => {
     const[planPrice, setPlanPrice] = useState(0)
     const [boxPrice, setBoxPrice] = useState(0)
     
-    const userData = useSelector((state) => state.swift.user)
+    const userData = useSelector((state) => state.persisitedReducer.user)
 
     const handleShowSelect = () => {
         setShowSelect(!showSelect);
