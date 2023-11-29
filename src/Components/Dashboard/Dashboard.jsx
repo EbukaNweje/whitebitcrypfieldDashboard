@@ -455,7 +455,7 @@ const [userData, setUserdata] = useState({})
                         <div className="DashboardMainContent">
                             {/* <Outlet data = {userData} /> */}
                             {showHome ? (
-                                <DashHome />
+                                <DashHome  homechange = {setShowHome} planchange= {setTradingPlans}/>
                             ) : showdeposit ? (
                                 <Deposit />
                             ) : showWithdraw ? (
