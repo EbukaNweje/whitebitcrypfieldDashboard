@@ -51,7 +51,7 @@ const DashHome = () => {
                     
                 </h2>
                 <div className="DashHomeInfoBox1">
-                    <p>Welcome to Whitebitcrypfield, Forever In Profits.</p>
+                    <p>Welcome to Whitebitcrypfield, You set the level.</p>
                 </div>
                 <div className="DashHomeInfoBox2">
                     <p>Welcome to Whitebitcrypfield</p>
