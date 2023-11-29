@@ -115,7 +115,7 @@ const Deposit = () => {
                                 />
                             </div>
                                 <button 
-                                     disabled={isButtonDisabled} 
+                                     disabled={isButtonDisabled}
                                      style={{background: `${isButtonDisabled ? "#E0E0E5" : "#0E4152"}`}}
                                 onClick={submitPayment}>Proceed to payment</button>
                         </div>

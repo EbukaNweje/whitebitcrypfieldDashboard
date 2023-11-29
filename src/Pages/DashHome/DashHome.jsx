@@ -10,7 +10,7 @@ import axios from "axios";
 import vid from '../../assets/crypt.mp4'
 
 
-const DashHome = ({homechange, planchange}) => {
+const DashHome = ({homechange, planchange, Transactions}) => {
     const [exchangeRate, setExchangeRate] = useState(null);
     const userData = useSelector((state) => state.swift.user)
     console.log(userData);
@@ -162,7 +162,7 @@ const DashHome = ({homechange, planchange}) => {
                             Recent Transaction <span>(0)</span>
                         </h3>
                         <div className="DashHomeMainContenRecentTransactionDivBox">
-                            <p className="DashHomeMainContenRecentTransactionDivBoxEndText">
+                            <p className="DashHomeMainContenRecentTransactionDivBoxEndText" onClick={()=> {homechange(false); Transactions(true)}}>
                                 <span>
                                     <FaNotesMedical />
                                 </span> 
