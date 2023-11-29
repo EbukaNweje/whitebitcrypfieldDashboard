@@ -108,7 +108,7 @@ const [userData, setUserdata] = useState({})
 
       const handleLogOut = () =>{
           localStorage.removeItem("UserId");
-        window.location.href = "https://the-bitpay-capital.vercel.app"
+        window.location.href = "https://www.whitebitcrypfield.org/"
       }
 
       const [showHome, setShowHome] = useState(true);
