@@ -1,12 +1,20 @@
 import './Referrals.css'
 import {FaCopy, FaUser} from "react-icons/fa";
 import {FaArrowDownLong, FaArrowUpLong} from "react-icons/fa6";
+import { useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Referrals = () => {
+    
+    const [state, setState] = useState({
+        value: "https://www.whitebitcrypfield.org/",
+        copied: false,
+      });
+
     return (
         <>
             <div className="ReferralBody">
-                <h1>Refer users to Swift Earn Trade community</h1>
+                <h1>Refer users to whitebitcrypfield community</h1>
                 <div className="ReferralContent">
                     <div className="ReferralContentTop">
                         <div className="ReferralContentTopInputndLabel">
@@ -17,12 +25,17 @@ const Referrals = () => {
                             <div className="ReferralContentTopReferUsDivBox">
                                 <input
                                     type="text"
-                                    value={"https://www.whitebitcrypfield.org/"}
+                                    value={state.value}
                                     readOnly
                                 />
+                                <CopyToClipboard
+                                 text={state.value}
+                                 onCopy={() => setState({ copied: true })}
+                                 >
                                 <div className="ReferralContentTopReferUsDivBoxCopy">
                                     <FaCopy />
                                 </div>
+                                 </CopyToClipboard>
                             </div>
                         </div>
                         <div className='ReferralContentTopInfoBox'>
