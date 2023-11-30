@@ -26,33 +26,33 @@ const TradingPlans = () => {
         {
             name: 'Starter Package',
             duration: 42,
-            // profit: 46.5,
-            minimumDeposit: 10000,
-            maximunDeposit: 100000,
-            // minimumReturn: 46.5,
-            // maximumReturn: 46.5,
+            price: "100,000",
+            minimumDeposit: "10,000",
+            maximunDeposit: "100,000",
+            minimumReturn: "200",
+            maximumReturn: "350",
             // bonus: 0,
             selected: true,
         },
         {
             name: 'Premium Package',
             duration: 35,
-            // profit: 46.5,
-            minimumDeposit: 110000,
-            maximunDeposit: 500000,
-            // minimumReturn: 46.5,
-            // maximumReturn: 46.5,
+            price: "500,000",
+            minimumDeposit: "110,000",
+            maximunDeposit: "500,000",
+            minimumReturn: "350",
+            maximumReturn: "600",
             // bonus: 0,
             selected: true,
         },
         {
             name: 'Deluxe Package',
             duration: 28,
-            // profit: 46.5,
+            price: "1,000,000",
             minimumDeposit: 510000,
-            maximunDeposit: 100000000,
-            // minimumReturn: 46.5,
-            // maximumReturn: 46.5,
+            maximunDeposit: "100000000",
+            minimumReturn: "600",
+            maximumReturn: "1,100",
             // bonus: 0,
             selected: true,
         },
@@ -204,10 +204,10 @@ const TradingPlans = () => {
                                 </div>
                                 <div className="TradingPlansRightBoxRow1R">
                                     <h5>Plan Price</h5>
-                                    <p>{planPrice}</p>
+                                    <p>{selectedPackage.price}</p>
                                 </div>
                             </div>
-                            <div className="TradingPlansRightBoxRow1">
+                            {/* <div className="TradingPlansRightBoxRow1">
                                 <div className="TradingPlansRightBoxRow1L">
                                     <h5>Duration</h5>
                                     <p>{selectedPackage.duration} Days</p>
@@ -216,7 +216,7 @@ const TradingPlans = () => {
                                     <h5>Profit</h5>
                                     <p>{selectedPackage.profit}% Daily</p>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="TradingPlansRightBoxRow1">
                                 <div className="TradingPlansRightBoxRow1L">
                                     <h5>Minimum Deposit</h5>
@@ -239,8 +239,8 @@ const TradingPlans = () => {
                             </div>
                             <div className="TradingPlansRightBoxRow2">
                                 <div className="TradingPlansRightBoxRow1L">
-                                    <h5>Bonus</h5>
-                                    <p>${selectedPackage.bonus}</p>
+                                <h5>Duration</h5>
+                                <p>{selectedPackage.duration} Days</p>
                                 </div>
                             </div>
                                 </>)
