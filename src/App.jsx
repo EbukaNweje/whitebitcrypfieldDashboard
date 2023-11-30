@@ -3,6 +3,7 @@ import "./App.css";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Payment from "./Pages/Deposit/Payment";
+import ScrollToTop from "./Components/ScrollToTop";
 
 
 const App = () => {

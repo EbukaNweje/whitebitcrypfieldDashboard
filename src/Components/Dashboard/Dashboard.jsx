@@ -255,7 +255,8 @@ const [userData, setUserdata] = useState({})
 
     return (
         <>
-        <ScrollToTop/>
+    <ScrollToTop/>
+
             <div className="DashboardBody bigScreen">
                 <div className={`DashboardWrapper ${showNav ? "active" : " "}`}>
                     <div className={`DashboardNav ${showNav ? "active" : ""}`}>
@@ -455,7 +456,7 @@ const [userData, setUserdata] = useState({})
                         <div className="DashboardMainContent">
                             {/* <Outlet data = {userData} /> */}
                             {showHome ? (
-                                <DashHome  homechange = {setShowHome} planchange= {setTradingPlans} Transactions= {setShowTransaction}/>
+                                <DashHome  homechange = {setShowHome} planchange= {setTradingPlans} Transactions= {setShowTransaction} />
                             ) : showdeposit ? (
                                 <Deposit />
                             ) : showWithdraw ? (
@@ -471,7 +472,7 @@ const [userData, setUserdata] = useState({})
                             ) : showTradingPlans ? (
                                 <TradingPlans />
                             ) : showMyPlans ? (
-                                <MyPlans />
+                                <MyPlans myplans= {setTradingPlans} homechange = {setShowHome} data={userData}/>
                             ) : showReferrals ? (
                                 <Referrals />
                             ) : null}

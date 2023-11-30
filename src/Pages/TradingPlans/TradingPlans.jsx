@@ -26,46 +26,46 @@ const TradingPlans = () => {
         {
             name: 'Starter Package',
             duration: 42,
-            profit: 46.5,
+            // profit: 46.5,
             minimumDeposit: 10000,
             maximunDeposit: 100000,
-            minimumReturn: 46.5,
-            maximumReturn: 46.5,
-            bonus: 0,
+            // minimumReturn: 46.5,
+            // maximumReturn: 46.5,
+            // bonus: 0,
             selected: true,
         },
         {
             name: 'Premium Package',
-            duration: 7,
-            profit: 46.5,
+            duration: 35,
+            // profit: 46.5,
             minimumDeposit: 110000,
             maximunDeposit: 500000,
-            minimumReturn: 46.5,
-            maximumReturn: 46.5,
-            bonus: 0,
+            // minimumReturn: 46.5,
+            // maximumReturn: 46.5,
+            // bonus: 0,
             selected: true,
         },
         {
             name: 'Deluxe Package',
-            duration: 7,
-            profit: 46.5,
+            duration: 28,
+            // profit: 46.5,
             minimumDeposit: 510000,
             maximunDeposit: 100000000,
-            minimumReturn: 46.5,
-            maximumReturn: 46.5,
-            bonus: 0,
+            // minimumReturn: 46.5,
+            // maximumReturn: 46.5,
+            // bonus: 0,
             selected: true,
         },
     ]
 
-    const amountBox = [
-        100,
-        250,
-        500,
-        1000,
-        1500,
-        2000,
-    ]
+    // const amountBox = [
+    //     100,
+    //     250,
+    //     500,
+    //     1000,
+    //     1500,
+    //     2000,
+    // ]
 
     const validateSubmit = () =>{
         if(userData.accountBalance <= 3){
@@ -154,7 +154,8 @@ const TradingPlans = () => {
                                 </div> */}
                             </div>
                         </div>
-                        <div className="TradingPlansLeftBoxB">
+
+                        {/* <div className="TradingPlansLeftBoxB">
                             <p>Choose Quick Amount to Invest</p>
                             <div className="TradingPlansLeftBoxBItem">
                                 {
@@ -169,26 +170,12 @@ const TradingPlans = () => {
                                     ))
                                 }
                                 
-                                {/* <div className="TradingPlansLeftBoxBAmount">
-                                    $250
-                                </div>
-                                <div className="TradingPlansLeftBoxBAmount">
-                                    $500
-                                </div>
-                                <div className="TradingPlansLeftBoxBAmount">
-                                    $1,000
-                                </div>
-                                <div className="TradingPlansLeftBoxBAmount">
-                                    $1,500
-                                </div>
-                                <div className="TradingPlansLeftBoxBAmount">
-                                    $2,000
-                                </div> */}
                             </div>
-                        </div>
+                        </div> */}
+                        
                         <div className="TradingPlansLeftBoxC">
-                            <p>Or Enter Your Amount</p>
-                            <input type="number" value={boxPrice} min={0} placeholder="0" onChange={(e)=> {
+                            <p>Enter Your Amount</p>
+                            <input type="number" min={0} placeholder="0" onChange={(e)=> {
                                 setPlanPrice(e.target.value)
                             }
                             }/>

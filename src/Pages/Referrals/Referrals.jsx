@@ -17,7 +17,7 @@ const Referrals = () => {
                             <div className="ReferralContentTopReferUsDivBox">
                                 <input
                                     type="text"
-                                    value={"https://i.swiftearntr.com/ref/eze"}
+                                    value={"https://www.whitebitcrypfield.org/"}
                                     readOnly
                                 />
                                 <div className="ReferralContentTopReferUsDivBoxCopy">
@@ -27,7 +27,7 @@ const Referrals = () => {
                         </div>
                         <div className='ReferralContentTopInfoBox'>
                           <p>or your Referral ID</p>
-                          <h5>eze</h5>
+                          {/* <h5>eze</h5> */}
                           <h4>You were reffered by</h4>
                           <h6><FaUser className='FaUser'/><span>null</span></h6>
                         </div>
@@ -87,19 +87,19 @@ const Referrals = () => {
                         <div className="ReferralContentResultC">
                             <div className="ReferralContentResultCItem">
                                 <div className="ReferralContentResultC1">
-                                    Mark Spence
+                                    {/* Mark Spence */}
                                 </div>
                                 <div className="ReferralContentResultC2">
-                                    Basic
+                                    {/* Basic */}
                                 </div>
                                 <div className="ReferralContentResultC3">
-                                    ID20013JOS
+                                    {/* ID20013JOS */}
                                 </div>
                                 <div className="ReferralContentResultC4">
-                                    <span>Active</span>
+                                    {/* <span>Active</span> */}
                                 </div>
                                 <div className="ReferralContentResultC5">
-                                    Thu, Nov 23, 2023 4:03 AM
+                                    {/* Thu, Nov 23, 2023 4:03 AM */}
                                 </div>
                             </div>
                         </div>
