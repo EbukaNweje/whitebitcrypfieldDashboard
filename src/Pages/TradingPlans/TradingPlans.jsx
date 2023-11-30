@@ -25,7 +25,7 @@ const TradingPlans = () => {
     const packageDatas = [
         {
             name: 'Starter Package',
-            duration: 7,
+            duration: 42,
             profit: 46.5,
             minimumDeposit: 10000,
             maximunDeposit: 100000,

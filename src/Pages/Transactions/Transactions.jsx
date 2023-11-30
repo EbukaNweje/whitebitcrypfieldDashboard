@@ -7,7 +7,8 @@ import { useSelector } from "react-redux";
 
 const Transactions = () => {
     const userData = useSelector((state) => state.persisitedReducer.depositData)
-    console.log(userData);
+    const userData2 = useSelector((state) => state.persisitedReducer.withdraw)
+    console.log(userData2);
     const [transDeposit, setTransDeposit] = useState(true);
     const [transWithdrawal, setTransWithdrawal] = useState(false);
     const [transOthers, setTransOthers] = useState(false);
@@ -116,10 +117,10 @@ const Transactions = () => {
                                 </div>
                                 <div className="TransactionContentResultC">
                                     {
-                                        userData.map((data)=>(
-                                        <div className="TransactionContentResultCItem">
+                                        userData.map((data, index)=>(
+                                        <div className="TransactionContentResultCItem" key={index+1}>
                                         <div className="TransactionContentResultC1">
-                                            {data.amount}
+                                            ${data.amount}
                                         </div>
                                         <div className="TransactionContentResultC2">
                                             {data.paymentMode}
@@ -182,7 +183,7 @@ const Transactions = () => {
                                         </span>
                                     </div>
                                     <div className="TransactionContentResultB2W">
-                                        Amount + charges
+                                       Wallet Address
                                         <span>
                                             <FaArrowUpLong />{" "}
                                             <FaArrowDownLong />
@@ -211,23 +212,27 @@ const Transactions = () => {
                                     </div>
                                 </div>
                                 <div className="TransactionContentResultC">
+                                {
+                                        userData2.map((props)=>( 
                                     <div className="TransactionContentResultCItem">
                                         <div className="TransactionContentResultC1W">
-                                            {/* $2000 */}
+                                            ${props.amount}
                                         </div>
                                         <div className="TransactionContentResultC2W">
-                                            {/* $2,100 */}
+                                            {props.withdrawalWallet}
                                         </div>
                                         <div className="TransactionContentResultC2W">
-                                            {/* Bank */}
+                                            Btc
                                         </div>
                                         <div className="TransactionContentResultC3W">
-                                            {/* <span>Pending</span> */}
+                                            <span>Pending</span>
                                         </div>
                                         <div className="TransactionContentResultC4W">
-                                            {/* Thu, Nov 24, 2023 4:03 AM */}
+                                            {props.dateCreated}
                                         </div>
                                     </div>
+                                    ))
+                            }
                                 </div>
                                 <div className="TransactionContentResultD">
                                     <div className="TransactionContentResultDLeft">

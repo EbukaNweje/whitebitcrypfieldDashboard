@@ -8,6 +8,7 @@ const swift = createSlice({
     idValue: '',
     user: {},
     depositData: [],
+    withdraw: [],
   },
   reducers: {
     setIdValue(state, action) {
@@ -23,8 +24,14 @@ const swift = createSlice({
           console.log("FIRST", action.payload);
         //  = [...state.depositData, action.payload]
         },
+        
+        updatewithdraw(state, action) {
+          state.withdraw.push(action.payload) 
+          console.log("FIRST", action.payload);
+        //  = [...state.depositData, action.payload]
+        },
   },
 });
 
-export const { setIdValue, swiftUserData, updateDepositData } = swift.actions;
+export const { setIdValue, swiftUserData, updateDepositData, updatewithdraw } = swift.actions;
 export default swift.reducer;
