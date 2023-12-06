@@ -4,13 +4,16 @@ import "./TradingPlans.css";
 import {IoWalletOutline} from "react-icons/io5";
 import {useEffect, useState} from "react";
 import {useSelector} from 'react-redux'
+import { useNavigate, useParams } from "react-router";
 
 
 const TradingPlans = () => {
     const [showSelect, setShowSelect] = useState(false);
     const [selectedPackage, setSelectedPackage] = useState(null)
     const[planPrice, setPlanPrice] = useState(0)
-    const [boxPrice, setBoxPrice] = useState(0)
+    console.log(planPrice)
+    // const [boxPrice, setBoxPrice] = useState(0)
+    // console.log(selectedPackage.name)
     
     const userData = useSelector((state) => state.persisitedReducer.user)
 
@@ -18,7 +21,7 @@ const TradingPlans = () => {
         setShowSelect(!showSelect);
     };
 
-    const [disabledBtn, setDisabledBtn] = useState(true)
+    const [disabledBtn, setDisabledBtn] = useState(false);
     const [info, setInfo] = useState('')
     const [error, setError] = useState(false)
 
@@ -49,14 +52,41 @@ const TradingPlans = () => {
             name: 'Deluxe Package',
             duration: 28,
             price: "1,000,000",
-            minimumDeposit: 510000,
-            maximunDeposit: "100000000",
+            minimumDeposit: "510000",
+            maximunDeposit: "1,000,000",
             minimumReturn: "600",
             maximumReturn: "1,100",
             // bonus: 0,
             selected: true,
         },
     ]
+
+    const [currentPackage, setCurrentPackage] = useState("")
+    console.log(currentPackage)
+
+    const nav = useNavigate()
+    const { id } = useParams();
+
+    const checkAmount = () => {
+        if(!planPrice){
+            alert("Please input a deposit amount")
+        }else if (!selectedPackage) {
+          alert("Please select a package");
+        } else {
+          const planPriceNumber = parseFloat(planPrice.replace(/,/g, ''));
+          const minDepositNumber = parseFloat(selectedPackage.minimumDeposit.replace(/,/g, ''));
+      
+          if (isNaN(planPriceNumber) || isNaN(minDepositNumber)) {
+            alert("Invalid plan price or minimum deposit");
+          } else if (planPriceNumber < minDepositNumber) {
+            alert(`${selectedPackage.name} minimum deposit should be at least $${minDepositNumber}`);
+          } else {
+            console.log("Making Plan...");
+            alert("Success.....");
+            window.location.reload()
+          }
+        }
+      };
 
     // const amountBox = [
     //     100,
@@ -125,6 +155,15 @@ const TradingPlans = () => {
                                         <div key={index} className="TradingPlansLeftBoxADropItem" onClick={()=>{
                                             handleShowSelect()
                                             setSelectedPackage(item);
+                                            if(item.name === "Starter Package"){
+                                                setCurrentPackage("Starter Package")
+                                            }else if (item.name === "Premium Package"){
+                                                setCurrentPackage("Premium Package")
+                                            }else if (item.name === "Deluxe Package"){
+                                                setCurrentPackage("Deluxe Package")
+                                            }else {
+                                                setCurrentPackage("");
+                                            }
                                         }}>
                                     <h3>
                                         <span>
@@ -257,7 +296,7 @@ const TradingPlans = () => {
                                 <p>
                                     Amount to invest: <span>${planPrice}</span>
                                 </p>
-                                <button disabled={disabledBtn}>Confirm & Invest</button>
+                                <button onClick={checkAmount}>Confirm & Invest</button>
                             </div>
                         </div>
                     </div>

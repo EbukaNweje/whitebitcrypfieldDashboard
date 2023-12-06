@@ -423,9 +423,9 @@ const Dashboard = () => {
                                         Contact our 24/7 customer support center
                                     </p>
                                 </div>
-                                <div className="DashboardNavContactBtn">
+                                {/* <div className="DashboardNavContactBtn">
                                     <button>Contact us</button>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
