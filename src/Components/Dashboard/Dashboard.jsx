@@ -47,7 +47,7 @@ const Dashboard = () => {
     
     const handleGetUser = async () => {
         
-        fetch(`https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`, {
+        fetch(`https://white-bit-back-endnew.vercel.app/api/userdata/${id}`, {
             method: 'GET',
         })
         .then(response=> response.json())
